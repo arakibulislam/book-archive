@@ -1,51 +1,56 @@
+// Global Variable
 const inputText = document.getElementById('input');
 const displayBook = document.getElementById('show-book');
 const bookFound = document.getElementById('book-found');
 const spinner = document.getElementById('spinner');
 const alart = document.getElementById('alart')
 const alart1 = document.getElementById('alart-1')
-const searchBook = ()=>{
-    if(inputText.value === ''){
-        alart.style.display ='block'
-        alart1.style.display ='none'
+
+// onclick function
+const searchBook = () => {
+    if (inputText.value === '') {
+        alart.style.display = 'block'
+        alart1.style.display = 'none'
+        bookFound.innerHTML = '';
+        displayBook.innerHTML = '';
     }
-    else{
+    else {
         getBook(inputText.value);
-    spinner.style.display = 'block'
-    alart.style.display ='none'
+        spinner.style.display = 'block'
+        alart.style.display = 'none'
+        alart1.style.display = 'none'
+        bookFound.innerHTML = '';
+        displayBook.innerHTML = '';
     }
 }
-
+// fetch url
 const getBook = (search) => {
     const url = `https://openlibrary.org/search.json?q=${search}`;
     fetch(url)
         .then(res => res.json())
         .then(data => showBook(data))
 }
-// getBook('java')
 
-const showBook = books => { 
+const showBook = books => {
     // condition
     const bookDetails = books.docs;
-    if(bookDetails.length === 0){
-        alart1.style.display ='block'
+    if (bookDetails.length === 0) {
+        alart1.style.display = 'block'
         spinner.style.display = 'none';
         inputText.value = '';
     }
 
-    else{
+    else {
         const h3 = document.createElement('h3');
-    h3.innerText= `${books.numFound} search results for "${inputText.value}"`;
-    bookFound.innerHTML = '';
-    bookFound.appendChild(h3);
-    displayBook.innerHTML = '';
-    inputText.value = '';
-    // for each loop for get docs details
-    bookDetails?.forEach(book => {
-        // console.log(book.title);
-        const div = document.createElement("div");
-        div.classList.add("col");
-        div.innerHTML = `
+        h3.innerText = `${books.numFound} search results for "${inputText.value}"`;
+        bookFound.appendChild(h3);
+        inputText.value = '';
+
+        // for each loop for get docs details
+        bookDetails?.forEach(book => {
+            const div = document.createElement("div");
+            div.classList.add("col");
+            div.innerHTML = `
         <div class="card mb-3 h-100" style="max-width: 540px;">
                     <div class="row g-0">
                         <div class="col-md-4">
@@ -62,10 +67,10 @@ const showBook = books => {
                     </div>
                 </div>
         `;
-       displayBook.appendChild(div);
-       spinner.style.display = 'none';
-    });
+            displayBook.appendChild(div);
+            spinner.style.display = 'none';
+        });
     }
-    
+
 }
 
