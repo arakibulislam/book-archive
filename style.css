@@ -1,7 +1,11 @@
+body{
+    background-color: rgba(190, 190, 190, 0.541);
+}
+
 #spinner{
     display: none;
 }
-#alart, #alart-1{
+#alert, #alert-1{
     display: none;
 }
 
@@ -11,3 +15,4 @@
     background-size: cover;
     background-repeat: no-repeat;
 } */
+
