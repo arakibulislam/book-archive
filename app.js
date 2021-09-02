@@ -30,6 +30,7 @@ const getBook = (search) => {
         .then(res => res.json())
         .then(data => showBook(data))
 }
+//  display book function
 
 const showBook = books => {
     // condition
@@ -51,7 +52,7 @@ const showBook = books => {
             const div = document.createElement("div");
             div.classList.add("col");
             div.innerHTML = `
-                <div class="card mb-3 h-100  border-0 rounded-3 shadow books mx-2">
+                <div class="card  h-100  border-0 rounded-3 shadow books mx-2">
                     <div class="row g-0">
                         <div class="col-md-4">
                             <img src="https://covers.openlibrary.org/b/id/${book.cover_i ? book.cover_i : '10909258'}-M.jpg" class="img-fluid rounded-start" alt="...">
