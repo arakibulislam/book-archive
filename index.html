@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +9,7 @@
     <!-- ================== Bootstrap ================ -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <!-- =============== Style sheet ================ -->
+    <!-- =============== Style sheet ================ -->
     <link rel="stylesheet" href="style.css">
     <!-- =================== Font Awsome ================ -->
     <script src="https://kit.fontawesome.com/6ab963381c.js" crossorigin="anonymous"></script>
@@ -17,36 +18,42 @@
     <title>The Book's Paradise</title>
 </head>
 
-<body>
-    <section class="container">
-        <div class="text  w-50 mx-auto  text-center  bg-secondary shadow d-md-flex align-items-center justify-content-center py-md-0 py-3 ">
+<body onload="myFunction()">
+    <!-- ================ loading page ==================== -->
+    <div class="text-center" id="loading">
+        <img src="image/Cube-0.8s-307px.gif" alt="home page loading">
+    </div>
+<!-- ================= Header section ====================== -->
+    <section id="page" class="container">
+        <div
+            class="text  w-50 mx-auto  text-center  bg-secondary shadow d-md-flex align-items-center justify-content-center py-md-0 py-3 ">
             <img class="img-fluid w-25" src="image/read-1.1s-200px (2).png" alt="">
-        <h1 class=" text-white fw-bolde">
-            The Book's Paradise</h1>
+            <h1 class=" text-white fw-bolde">
+                The Book's Paradise</h1>
         </div>
 
-         <!-- ============ search section============== -->
-            
+        <!-- ============ search section============== -->
+
         <div class="d-md-flex text-center   w-50 mx-auto">
-            <input id="input" class="form-control me-2 border-0 shadow py-2 px-4 my-md-0 my-3" type="search" placeholder="Search the Library"
-                aria-label="Search">
+            <input id="input" class="form-control me-2 border-0 shadow py-2 px-4 my-md-0 my-3" type="search"
+                placeholder="Search the Library" aria-label="Search">
             <button onclick="searchBook()" class="btn btn-secondary shadow px-4" type="submit">SEARCH</button>
 
             <!-- ============== alert section ============ -->
         </div>
-        <div id="alert" class="alert alert-light w-50 mx-auto my-4 text-danger shadow" role="alert">
-            <i class="fas fa-exclamation-triangle px-3"></i>   Please Input A book name!
+        <div id="empty" class="alert alert-light w-50 mx-auto my-4 text-danger shadow" role="alert">
+            <i class="fas fa-exclamation-triangle px-3"></i> Please Input A book name!
         </div>
-        <div id="alert-1" class="alert alert-light w-50 mx-auto my-4 text-danger shadow" role="alert">
+        <div id="error" class="alert alert-light w-50 mx-auto my-4 text-danger shadow" role="alert">
             <i class="fas fa-exclamation-triangle px-3"></i>
-            Book not found! please try again
+            Sorry! Book not found, please try again
         </div>
 
         <!-- ================ Loading spinner ============== -->
         <div id="spinner" class="text-center my-5">
             <!-- <div class="spinner-grow text-secondary" role="status" style="width: 5rem; height: 5rem;"> -->
-                <img src="image/Dual Ball-1s-200px.gif" alt="">
-            </div>
+            <img src="image/Dual Ball-1s-200px.gif" alt="">
+        </div>
         </div>
 
         <!-- ============== Display Book ============== -->
@@ -59,7 +66,7 @@
 
     </section>
 
-<!-- ================ js file ==================== -->
+    <!-- ================ js file ==================== -->
 
     <script src="app.js"></script>
 </body>

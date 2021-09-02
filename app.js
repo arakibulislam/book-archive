@@ -1,24 +1,35 @@
+//  loading page function
+
+const myFunction = () => {
+    setTimeout(showPage, 2000);
+}
+const showPage = () => {
+    document.getElementById("loading").style.display = "none";
+    document.getElementById("page").style.display = "block";
+}
+
+
 // Global Variable
 const inputText = document.getElementById('input');
 const displayBook = document.getElementById('show-book');
 const bookFound = document.getElementById('book-found');
 const spinner = document.getElementById('spinner');
-const alert = document.getElementById('alert')
-const alert1 = document.getElementById('alert-1')
+const empty = document.getElementById('empty')
+const error = document.getElementById('error')
 
-// onclick function
+// search button onclick function
 const searchBook = () => {
     if (inputText.value === '') {
-        alert.style.display = 'block'
-        alert1.style.display = 'none'
+        empty.style.display = 'block'
+        error.style.display = 'none'
         bookFound.innerHTML = '';
         displayBook.innerHTML = '';
     }
     else {
         getBook(inputText.value);
         spinner.style.display = 'block'
-        alert.style.display = 'none'
-        alert1.style.display = 'none'
+        empty.style.display = 'none'
+        error.style.display = 'none'
         bookFound.innerHTML = '';
         displayBook.innerHTML = '';
     }
@@ -36,7 +47,7 @@ const showBook = books => {
     // condition
     const bookDetails = books.docs;
     if (bookDetails.length === 0) {
-        alert1.style.display = 'block'
+        error.style.display = 'block'
         spinner.style.display = 'none';
         inputText.value = '';
     }

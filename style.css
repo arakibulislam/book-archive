@@ -1,17 +1,20 @@
 body{
-    background-color: rgba(190, 190, 190, 0.541);
+    background-color: rgba(209, 209, 209, 0.575);
 }
 
-#spinner{
+#spinner, #page{
     display: none;
 }
-#alert, #alert-1{
+#empty, #error{
     display: none;
 }
 .text{
     margin: 30px;
     border-radius: 10px;
     padding-right: 20px;
+}
+#loading img{
+    margin-top: 35vh;
 }
 
 /* body{
