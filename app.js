@@ -59,7 +59,7 @@ const showBook = books => {
                         </div>
                         <div class="col-md-8 ">
                             <div class="card-body">
-                                <h5 class="card-title fs-4 ">${book.title} </h5>
+                                <h5 class="card-title fs-4">${book.title} </h5>
                                 <p class="card-text"><span class="fw-bold ">Author :</span> ${book.author_name ? book.author_name : 'not found'}</p>
                                 <p class="card-text"><span class="fw-bold ">Publisher :</span> ${book.publisher ? book.publisher : 'not found'}</p>
                                 <p class="card-text"><span class="fw-bold ">First publish year :</span> ${book.first_publish_year ? book.first_publish_year : 'not found'}</p>

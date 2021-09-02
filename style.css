@@ -8,6 +8,11 @@ body{
 #alert, #alert-1{
     display: none;
 }
+.text{
+    margin: 30px;
+    border-radius: 10px;
+    padding-right: 20px;
+}
 
 /* body{
     background-image: url(image/angry-bird-minimal-8k-6s.jpg);
